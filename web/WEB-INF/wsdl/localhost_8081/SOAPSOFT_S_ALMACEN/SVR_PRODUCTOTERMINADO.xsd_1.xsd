@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:tns="http://Service.soapsoft.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Service.soapsoft.com/">
+
+<xs:element name="consultar_productos" type="tns:consultar_productos"/>
+
+<xs:element name="consultar_productosResponse" type="tns:consultar_productosResponse"/>
+
+<xs:element name="fn_eliminar_productoterminado" type="tns:fn_eliminar_productoterminado"/>
+
+<xs:element name="fn_eliminar_productoterminadoResponse" type="tns:fn_eliminar_productoterminadoResponse"/>
+
+<xs:element name="fn_insertar_productoterminado" type="tns:fn_insertar_productoterminado"/>
+
+<xs:element name="fn_insertar_productoterminadoResponse" type="tns:fn_insertar_productoterminadoResponse"/>
+
+<xs:element name="fn_modificar_productoterminado" type="tns:fn_modificar_productoterminado"/>
+
+<xs:element name="fn_modificar_productoterminadoResponse" type="tns:fn_modificar_productoterminadoResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_modificar_productoterminado">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="referencia" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="um" type="xs:string" minOccurs="0"/>
+<xs:element name="stock" type="xs:int"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_modificar_productoterminadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_eliminar_productoterminado">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_eliminar_productoterminadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_insertar_productoterminado">
+<xs:sequence>
+<xs:element name="referencia" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="um" type="xs:string" minOccurs="0"/>
+<xs:element name="stock" type="xs:int"/>
+<xs:element name="id_ubicacion" type="xs:int"/>
+<xs:element name="creadorPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_insertar_productoterminadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultar_productos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultar_productosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tbProductoTerminado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tbProductoTerminado">
+<xs:sequence>
+<xs:element name="creadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="creadorPor" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="modificadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="referencia" type="xs:string" minOccurs="0"/>
+<xs:element name="stock" type="xs:int"/>
+<xs:element name="tbDetalleEntradaProdTerms" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tbDetalleFacturaVentas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tbDetalleProduccions" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tbDetalleSalidaProdTerms" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tbSalidaMateriaPrimas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tbUbicacion" type="tns:tbUbicacion" minOccurs="0"/>
+<xs:element name="um" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tbUbicacion">
+<xs:sequence>
+<xs:element name="creadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="modificadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="tbMateriaPrimas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tbProductoTerminados" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:tns="http://Service.soapsoft.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Service.soapsoft.com/">
+
+<xs:element name="consultar_cliente" type="tns:consultar_cliente"/>
+
+<xs:element name="consultar_clienteResponse" type="tns:consultar_clienteResponse"/>
+
+<xs:element name="fn_borrar" type="tns:fn_borrar"/>
+
+<xs:element name="fn_borrarResponse" type="tns:fn_borrarResponse"/>
+
+<xs:element name="fn_insertar" type="tns:fn_insertar"/>
+
+<xs:element name="fn_insertarResponse" type="tns:fn_insertarResponse"/>
+
+<xs:element name="fn_modificar" type="tns:fn_modificar"/>
+
+<xs:element name="fn_modificarResponse" type="tns:fn_modificarResponse"/>
+
+<xs:complexType name="fn_insertar">
+<xs:sequence>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="razon_social" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="contacto" type="xs:int"/>
+<xs:element name="estado" type="xs:boolean"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_insertarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_modificar">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="razon_social" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="contacto" type="xs:int"/>
+<xs:element name="estado" type="xs:boolean"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_modificarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultar_cliente">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultar_clienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tbClientes" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tbClientes">
+<xs:sequence>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="contacto" type="xs:int"/>
+<xs:element name="creadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:boolean"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="modificadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="razonSocial" type="xs:string" minOccurs="0"/>
+<xs:element name="tbFacturaVentas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_borrar">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_borrarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

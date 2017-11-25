@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Ventas</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <h:form id="forma">
+               <p:growl id="msgs" showDetail="true" />
+ 
+                   <h:panelGrid columns="3" cellpadding="5"  >
+                       
+                       
+                        <p:outputLabel value="Datos de la Venta : " />
+                               <p:spacer></p:spacer>
+                           <p:spacer></p:spacer>
+                       <p:outputLabel value="Nit : " for="id_cliente" />
+                       <p:inputText id="id_cliente" value="#{ventasBean.id_cliente}" />
+                       <p:commandButton  value ="Consultar Usuario" action="#{ventasBean.v_consultaCliente()}"
+                        update=":forma:razon_social,:forma:msgs,:forma:producto,:forma:Cantidad,:forma:valoriva,:forma:tipoiva,:forma:varlorunitario,:forma:varlortotal" 
+                       ></p:commandButton>
+
+                       <p:outputLabel value="Razon Social: " for="razon_social" />
+                       <p:outputLabel  id="razon_social"   value="#{ventasBean.o_cliente.razonSocial}"  />
+                       <p:spacer></p:spacer>
+                       
+                        <p:outputLabel value="Observacion Venta" for="observacion" />
+                        <p:inputText  id="observacion"   value="#{ventasBean.v_Observacion}"  />
+                       <p:spacer></p:spacer>
+
+                   </h:panelGrid>
+               
+                    <h:panelGrid columns="4" cellpadding="5">
+                            
+                                                <p:outputLabel value="informacion : " />
+                                                       <p:spacer></p:spacer>
+                                                              <p:spacer></p:spacer>
+                                                                     <p:spacer></p:spacer>
+                        
+                        <p:outputLabel value="Producto : " for="producto" />
+                        
+                        <p:selectOneMenu id="producto" value="#{ventasBean.detalle.idProductoTerminado}" style="width:125px">
+                                <f:selectItem itemLabel="" itemValue="" />
+                                <f:selectItems value="#{ventasBean.o_productos}" />
+                       </p:selectOneMenu>
+                        
+                        <p:outputLabel value="Cantidad : " for="Cantidad" />
+                        <p:inputText id="Cantidad" value="#{ventasBean.detalle.cantidad}" />
+                        
+                        <p:outputLabel value="Valor iva : " for="valoriva" />
+                        <p:inputText id="valoriva" value="#{ventasBean.detalle.vlorIva}" />
+                        
+                        
+                         <p:outputLabel value="Tipo Iva : " for="tipoiva" />
+                         <p:inputText id="tipoiva" value="#{ventasBean.detalle.tipoIva}" />
+  
+                         <p:outputLabel value="Valor unitario : " for="varlorunitario" />
+                         <p:inputText id="varlorunitario" value="#{ventasBean.detalle.vlorUnitario}" />
+                         
+                         <p:outputLabel value="Valor Total : " for="varlortotal" />
+                         <p:inputText id="varlortotal" value="#{ventasBean.detalle.vlorTotal}" />
+                         
+                         <p:commandButton  value ="Adicionar Producto" action="#{ventasBean.v_addicionar_detalle()}"
+                         update=":forma:msgs,:forma:producto,:forma:Cantidad,:forma:valoriva,:forma:tipoiva,:forma:varlorunitario,:forma:varlortotal,:forma:listaDetalle" 
+                         ></p:commandButton>
+                         
+                    </h:panelGrid>
+               
+                                             <p:outputLabel value="Detalle venta : " />
+               
+               
+               <p:dataTable id="listaDetalle" value="#{ventasBean.o_deltalle_factura}"
+                        var="datalle_factura"
+                        paginator="true"
+                        rows="20"
+                        paginatorPosition="bottom"
+                        >
+
+                        <p:column  headerText="Producto">                                     
+                            <h:outputText value="#{datalle_factura.idProductoTerminado}" />           
+                        </p:column>
+
+                       <p:column  headerText="Cantidad ">                                     
+                           <h:outputText value="#{datalle_factura.cantidad}" />           
+                        </p:column>
+                    
+                        <p:column  headerText="Valor iva ">                                     
+                            <h:outputText value="#{datalle_factura.vlorIva}" />           
+                        </p:column>
+                    
+                        <p:column  headerText="Tipo Iva ">                                     
+                            <h:outputText value="#{datalle_factura.tipoIva}" />           
+                        </p:column>
+                   
+                         <p:column  headerText="Valor unitario  ">                                     
+                             <h:outputText value="#{datalle_factura.vlorUnitario}" />           
+                        </p:column>
+                   
+                         <p:column  headerText="Valor Total  ">                                     
+                             <h:outputText value="#{datalle_factura.vlorTotal}" />           
+                        </p:column>
+                  
+                         <!-- Borrar -->
+                        <p:column headerText="" style="width:30px" >
+                                                 <p:commandButton
+                                                   ajax="true" icon="ui-icon-trash"
+                                                   update=":forma:listaDetalle"
+                                                   action="#{ventasBean.eliminar_detalle(detalle_temp)}"
+                                                   />
+                        </p:column>
+
+                       </p:dataTable>
+               
+              <p:commandButton  value ="Hacer Venta" action="#{ventasBean.v_hacer_venta()}"
+                     update=":forma:msgs,:forma:producto,:forma:Cantidad,:forma:valoriva,:forma:tipoiva,:forma:varlorunitario,:forma:varlortotal,:forma:listaDetalle,:forma:observacion,:forma:id_cliente,:forma:razon_social"
+                     ajax="true"      
+             ></p:commandButton>
+               
+            </h:form>
+            
+            
+
+    
+            
+        </h:body>
+
+    </f:view>
+</html>
+

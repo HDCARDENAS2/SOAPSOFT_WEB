@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-SVR_PRODUCTOTERMINADO" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCTOTERMINADO"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SVR_PRODUCTOTERMINADO" destdir="${build.generated.dir}/jax-wsCache/SVR_PRODUCTOTERMINADO" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_PRODUCTOTERMINADO/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_PRODUCTOTERMINADO/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCTOTERMINADO"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCTOTERMINADO">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SVR_PRODUCTOTERMINADO" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/soapsoft/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCTOTERMINADO"/>
+    </target>
+    <target name="wsimport-client-SVR_CLIENTES" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SVR_CLIENTES"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SVR_CLIENTES" destdir="${build.generated.dir}/jax-wsCache/SVR_CLIENTES" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_CLIENTES/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_CLIENTES/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SVR_CLIENTES"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SVR_CLIENTES">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SVR_CLIENTES" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/soapsoft/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/SVR_CLIENTES"/>
+    </target>
+    <target name="wsimport-client-SRV_DETALLEFACTURAVENTA" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SRV_DETALLEFACTURAVENTA"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SRV_DETALLEFACTURAVENTA" destdir="${build.generated.dir}/jax-wsCache/SRV_DETALLEFACTURAVENTA" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/SRV_DETALLEFACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/SRV_DETALLEFACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SRV_DETALLEFACTURAVENTA"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SRV_DETALLEFACTURAVENTA">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SRV_DETALLEFACTURAVENTA" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/soapsoft/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/SRV_DETALLEFACTURAVENTA"/>
+    </target>
+    <target name="wsimport-client-SVR_FACTURAVENTA" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SVR_FACTURAVENTA"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SVR_FACTURAVENTA" destdir="${build.generated.dir}/jax-wsCache/SVR_FACTURAVENTA" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_FACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_FACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SVR_FACTURAVENTA"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SVR_FACTURAVENTA">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SVR_FACTURAVENTA" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/soapsoft/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/SVR_FACTURAVENTA"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-SVR_PRODUCTOTERMINADO, wsimport-client-SVR_CLIENTES, wsimport-client-SRV_DETALLEFACTURAVENTA, wsimport-client-SVR_FACTURAVENTA"/>
+</project>
