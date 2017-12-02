@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="plantilla.xhtml">
+
+        <ui:define name="content">
+
+            <h:form id="forma">
+                <p:growl id="msgs" showDetail="true" />
+                <p:panel id="panel" header="Ubicación Almacén"> 
+                    <h:panelGrid columns="4" cellpadding="5">
+                        <h:outputLabel for="name" value="Descripción: *" style="font-weight:bold" />
+                        <p:inputText id="des" value="#{ubicacionBean.v_descripcion}" required="true"/>
+
+                        <p:commandButton  value ="Guardar" action="#{ubicacionBean.crear_ubicacion()}" icon="ui-icon-disk" update=":forma:msgs,:forma:des,:forma:listaUbicacion" ajax="true"> </p:commandButton>
+                    </h:panelGrid>
+                </p:panel> 
+
+
+                <p:dataTable id="listaUbicacion" value="#{ubicacionBean.tb_o_ubicacion}"
+                         var="tbubi" 
+                         paginator="true" 
+                         rows="20" 
+                         editable="true"
+                         paginatorPosition="bottom"
+                         >
+                    <p:column headerText="ID">
+                        <p:outputLabel value="#{tbubi.id}"></p:outputLabel>
+
+                </p:column>
+                    
+                    <p:column headerText="Descripcion">
+                        <p:outputLabel value="#{tbubi.descripcion}"></p:outputLabel>
+
+                </p:column>
+                
+                </p:dataTable>
+
+                <p:link outcome="index" value="Inicio">
+                    <f:param name="productId" value="10" />
+
+
+
+
+                </p:link>
+
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>  

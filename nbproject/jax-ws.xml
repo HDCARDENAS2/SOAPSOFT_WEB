@@ -130,5 +130,37 @@
         </wsimport-option>
       </wsimport-options>
     </client>
+    <client name="SVR_UBICACION">
+      <wsdl-url>http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION.wsdl</local-wsdl-file>
+      <package-name>com.soapsoft.service</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
   </clients>
 </jax-ws>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <link rel="shortcut icon" type="image/x-icon" href="/imagenes/favicon.ico"/>
+  <title><ui:insert name="title">Sistema SOAPSOFT</ui:insert></title>
+
+
+</h:head>
+
+<body >
+
+
+
+<div id="header">
+    <ui:insert name="header">
+     	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+    	 <ui:include src="cabecera.xhtml"/> 
+    </ui:insert>
+</div>
+
+
+<div id="content" >
+  <ui:insert name="content">
+    	
+  
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+
+  </ui:insert>
+</div>
+
+<div id="footer">
+  <ui:insert name="footer">
+ 
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+		<ui:include src="piepagina.xhtml"/> 
+  </ui:insert>
+</div>
+
+</body>
+
+</html>

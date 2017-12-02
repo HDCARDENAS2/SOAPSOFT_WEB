@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?wsdl" uri="src/conf/xml-resources/web-service-references/SVR_PRODUCTOTERMINADO/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.wsdl"/>
-    <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?xsd=1" uri="src/conf/xml-resources/web-service-references/SVR_PRODUCTOTERMINADO/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.xsd_1.xsd"/>
-    <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES?wsdl" uri="src/conf/xml-resources/web-service-references/SVR_CLIENTES/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES.wsdl"/>
-    <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES?xsd=1" uri="src/conf/xml-resources/web-service-references/SVR_CLIENTES/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES.xsd_1.xsd"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA?wsdl" uri="src/conf/xml-resources/web-service-references/SRV_DETALLEFACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA.wsdl"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA?xsd=1" uri="src/conf/xml-resources/web-service-references/SRV_DETALLEFACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA.xsd_1.xsd"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA?wsdl" uri="src/conf/xml-resources/web-service-references/SVR_FACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA.wsdl"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA?xsd=1" uri="src/conf/xml-resources/web-service-references/SVR_FACTURAVENTA/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_FACTURAVENTA.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES?wsdl" uri="src/conf/xml-resources/web-service-references/SVR_CLIENTES/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES.wsdl"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES?xsd=1" uri="src/conf/xml-resources/web-service-references/SVR_CLIENTES/wsdl/localhost_8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?wsdl" uri="src/conf/xml-resources/web-service-references/SVR_UBICACION/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION.wsdl"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?xsd=1" uri="src/conf/xml-resources/web-service-references/SVR_UBICACION/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?wsdl" uri="src/conf/xml-resources/web-service-references/SVR_PRODUCTOTERMINADO/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.wsdl"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?xsd=1" uri="src/conf/xml-resources/web-service-references/SVR_PRODUCTOTERMINADO/wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.xsd_1.xsd"/>
 </catalog>

@@ -20,6 +20,31 @@
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
 
+<xs:element name="modificar_stock_prod_terminado" type="tns:modificar_stock_prod_terminado"/>
+
+<xs:element name="modificar_stock_prod_terminadoResponse" type="tns:modificar_stock_prod_terminadoResponse"/>
+
+<xs:element name="modificar_stocksumar_prod_terminado" type="tns:modificar_stocksumar_prod_terminado"/>
+
+<xs:element name="modificar_stocksumar_prod_terminadoResponse" type="tns:modificar_stocksumar_prod_terminadoResponse"/>
+
+<xs:element name="validar_stock_prod_terminado" type="tns:validar_stock_prod_terminado"/>
+
+<xs:element name="validar_stock_prod_terminadoResponse" type="tns:validar_stock_prod_terminadoResponse"/>
+
+<xs:complexType name="modificar_stocksumar_prod_terminado">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="cantidad" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificar_stocksumar_prod_terminadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="hello">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -49,6 +74,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="modificar_stock_prod_terminado">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="cantidad" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificar_stock_prod_terminadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="fn_eliminar_productoterminado">
 <xs:sequence>
 <xs:element name="ID" type="xs:int"/>
@@ -58,6 +96,26 @@
 <xs:complexType name="fn_eliminar_productoterminadoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validar_stock_prod_terminado">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="cantidad" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validar_stock_prod_terminadoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:resultado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resultado">
+<xs:sequence>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="resultado" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

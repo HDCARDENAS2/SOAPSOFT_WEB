@@ -4,17 +4,17 @@
 <xsd:import namespace="http://Service.soapsoft.com/" schemaLocation="http://localhost:8081/SOAPSOFT_S_CLIENTES/SRV_DETALLEFACTURAVENTA?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="fn_modificar_detalle_factura_venta">
-<part name="parameters" element="tns:fn_modificar_detalle_factura_venta"/>
-</message>
-<message name="fn_modificar_detalle_factura_ventaResponse">
-<part name="parameters" element="tns:fn_modificar_detalle_factura_ventaResponse"/>
-</message>
 <message name="fn_insertar_detalle_factura_venta">
 <part name="parameters" element="tns:fn_insertar_detalle_factura_venta"/>
 </message>
 <message name="fn_insertar_detalle_factura_ventaResponse">
 <part name="parameters" element="tns:fn_insertar_detalle_factura_ventaResponse"/>
+</message>
+<message name="fn_modificar_detalle_factura_venta">
+<part name="parameters" element="tns:fn_modificar_detalle_factura_venta"/>
+</message>
+<message name="fn_modificar_detalle_factura_ventaResponse">
+<part name="parameters" element="tns:fn_modificar_detalle_factura_ventaResponse"/>
 </message>
 <message name="fn_borrar_detalle_factura">
 <part name="parameters" element="tns:fn_borrar_detalle_factura"/>
@@ -23,13 +23,13 @@
 <part name="parameters" element="tns:fn_borrar_detalle_facturaResponse"/>
 </message>
 <portType name="SRV_DETALLEFACTURAVENTA">
-<operation name="fn_modificar_detalle_factura_venta">
-<input wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_modificar_detalle_factura_ventaRequest" message="tns:fn_modificar_detalle_factura_venta"/>
-<output wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_modificar_detalle_factura_ventaResponse" message="tns:fn_modificar_detalle_factura_ventaResponse"/>
-</operation>
 <operation name="fn_insertar_detalle_factura_venta">
 <input wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_insertar_detalle_factura_ventaRequest" message="tns:fn_insertar_detalle_factura_venta"/>
 <output wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_insertar_detalle_factura_ventaResponse" message="tns:fn_insertar_detalle_factura_ventaResponse"/>
+</operation>
+<operation name="fn_modificar_detalle_factura_venta">
+<input wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_modificar_detalle_factura_ventaRequest" message="tns:fn_modificar_detalle_factura_venta"/>
+<output wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_modificar_detalle_factura_ventaResponse" message="tns:fn_modificar_detalle_factura_ventaResponse"/>
 </operation>
 <operation name="fn_borrar_detalle_factura">
 <input wsam:Action="http://Service.soapsoft.com/SRV_DETALLEFACTURAVENTA/fn_borrar_detalle_facturaRequest" message="tns:fn_borrar_detalle_factura"/>
@@ -38,7 +38,7 @@
 </portType>
 <binding name="SRV_DETALLEFACTURAVENTAPortBinding" type="tns:SRV_DETALLEFACTURAVENTA">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="fn_modificar_detalle_factura_venta">
+<operation name="fn_insertar_detalle_factura_venta">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -47,7 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="fn_insertar_detalle_factura_venta">
+<operation name="fn_modificar_detalle_factura_venta">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

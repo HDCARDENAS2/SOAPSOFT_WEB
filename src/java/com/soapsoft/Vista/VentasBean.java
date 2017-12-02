@@ -7,9 +7,7 @@ package com.soapsoft.Vista;
 
 import com.soapsoft.Vista.Model.DetalleFacturaVenta;
 import com.soapsoft.service.TbClientes;
-import com.soapsoft.service.TbProductoTerminado;
 import java.util.ArrayList;
-import java.util.Iterator;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
