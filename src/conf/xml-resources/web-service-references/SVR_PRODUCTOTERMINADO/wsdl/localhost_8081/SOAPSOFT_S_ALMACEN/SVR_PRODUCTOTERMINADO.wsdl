@@ -4,6 +4,18 @@
 <xsd:import namespace="http://Service.soapsoft.com/" schemaLocation="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="hello">
+<part name="parameters" element="tns:hello"/>
+</message>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse"/>
+</message>
+<message name="modificar_stocksumar_prod_terminado">
+<part name="parameters" element="tns:modificar_stocksumar_prod_terminado"/>
+</message>
+<message name="modificar_stocksumar_prod_terminadoResponse">
+<part name="parameters" element="tns:modificar_stocksumar_prod_terminadoResponse"/>
+</message>
 <message name="fn_insertar_productoterminado">
 <part name="parameters" element="tns:fn_insertar_productoterminado"/>
 </message>
@@ -40,19 +52,15 @@
 <message name="modificar_stock_prod_terminadoResponse">
 <part name="parameters" element="tns:modificar_stock_prod_terminadoResponse"/>
 </message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
-</message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
-</message>
-<message name="modificar_stocksumar_prod_terminado">
-<part name="parameters" element="tns:modificar_stocksumar_prod_terminado"/>
-</message>
-<message name="modificar_stocksumar_prod_terminadoResponse">
-<part name="parameters" element="tns:modificar_stocksumar_prod_terminadoResponse"/>
-</message>
 <portType name="SVR_PRODUCTOTERMINADO">
+<operation name="hello">
+<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/helloRequest" message="tns:hello"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="modificar_stocksumar_prod_terminado">
+<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stocksumar_prod_terminadoRequest" message="tns:modificar_stocksumar_prod_terminado"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stocksumar_prod_terminadoResponse" message="tns:modificar_stocksumar_prod_terminadoResponse"/>
+</operation>
 <operation name="fn_insertar_productoterminado">
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_insertar_productoterminadoRequest" message="tns:fn_insertar_productoterminado"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_insertar_productoterminadoResponse" message="tns:fn_insertar_productoterminadoResponse"/>
@@ -77,17 +85,27 @@
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stock_prod_terminadoRequest" message="tns:modificar_stock_prod_terminado"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stock_prod_terminadoResponse" message="tns:modificar_stock_prod_terminadoResponse"/>
 </operation>
-<operation name="hello">
-<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/helloResponse" message="tns:helloResponse"/>
-</operation>
-<operation name="modificar_stocksumar_prod_terminado">
-<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stocksumar_prod_terminadoRequest" message="tns:modificar_stocksumar_prod_terminado"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stocksumar_prod_terminadoResponse" message="tns:modificar_stocksumar_prod_terminadoResponse"/>
-</operation>
 </portType>
 <binding name="SVR_PRODUCTOTERMINADOPortBinding" type="tns:SVR_PRODUCTOTERMINADO">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="modificar_stocksumar_prod_terminado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="fn_insertar_productoterminado">
 <soap:operation soapAction=""/>
 <input>
@@ -134,24 +152,6 @@
 </output>
 </operation>
 <operation name="modificar_stock_prod_terminado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="modificar_stocksumar_prod_terminado">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -13,6 +13,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
@@ -28,13 +29,13 @@ public class UbicacionBean {
      public List<TbUbicacion> lista_ubicacion;
      public TbUbicacion o_ubicacion;
      public int id;
-     public String v_descripcion;
+     public String v_descripcion="descripción";
      public String creadoPor="JA";
-     public String modificadoPor="JA";
+     public String modificadoPor="JARTEAGA 77";
     /**
-     * Creates a new instance of VentasBean
+     * Creates a new instance of UbicacionBean
      */
-    
+
     public void init() {
         
         o_ubicacion=new TbUbicacion();
@@ -44,7 +45,14 @@ public class UbicacionBean {
     }
 
     public List<TbUbicacion> getLista_ubicacion() {
-        return lista_ubicacion;
+         if (lista_ubicacion == null){
+	    	try {
+				lista_ubicacion = consultarTodosUbicacion();
+			} catch (Exception e) {				
+				e.printStackTrace();
+			}
+	    }
+		return lista_ubicacion;
     }
 
     public void setLista_ubicacion(List<TbUbicacion> lista_ubicacion) {
@@ -67,16 +75,6 @@ public class UbicacionBean {
         this.id = id;
     }
 
-    public List<TbUbicacion> getTb_o_ubicacion() {
-      if (lista_ubicacion == null){
-	    	try {
-				lista_ubicacion = consultarTodosUbicacion();
-			} catch (Exception e) {				
-				e.printStackTrace();
-			}
-	    }
-		return lista_ubicacion;
-	}
 
 
     public String getCreadoPor() {
@@ -107,16 +105,54 @@ public class UbicacionBean {
     
    public void crear_ubicacion()
    {
+
        fnInsertar(v_descripcion, creadoPor);
        mensaje("Info","Ubicación Insertada con exito!");
-       v_descripcion="";
        lista_ubicacion=new ArrayList<>();
        lista_ubicacion = consultarTodosUbicacion();
        
    }
-   
+   public void onRowCancel(RowEditEvent event) {
+        FacesMessage msg = new FacesMessage("Edicion Cancelada");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
   
+   public void onRowEdit(RowEditEvent event) {
+   
+       setId(((TbUbicacion) event.getObject()).getId());
+       setV_descripcion(((TbUbicacion) event.getObject()).getDescripcion());
     
+        fnModificar(id,v_descripcion,modificadoPor);
+       
+         lista_ubicacion=new ArrayList<>();
+         lista_ubicacion = consultarTodosUbicacion();
+       
+        FacesMessage msg = new FacesMessage("Ubicación Editada");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+    
+   public void deleteUbicacion(int id)
+   {
+       try
+       {
+       for (TbUbicacion tbUbicacion : lista_ubicacion) {
+            if(tbUbicacion.getId()== id){
+                fnEliminar(id);
+            
+               break;
+            }
+       }
+                lista_ubicacion=new ArrayList<>();
+                lista_ubicacion = consultarTodosUbicacion();
+                FacesMessage msg = new FacesMessage("Ubicación Eliminada");
+                FacesContext.getCurrentInstance().addMessage(null, msg);
+       }catch(Exception e)
+       {
+           FacesMessage msg = new FacesMessage(String.valueOf(e));
+           FacesContext.getCurrentInstance().addMessage(null, msg);
+       }
+
+   }
     public void mensaje(String titulo,String mensaje){
               FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(titulo, mensaje));
     }
@@ -139,10 +175,10 @@ public class UbicacionBean {
         return port.fnModificar(id, descripcion, modificadoPor);
     }
 
-   
-    
-    
-    
-    
-        
+    private static String fnEliminar(int id) {
+        com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
+        com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
+        return port.fnEliminar(id);
+    }
+
 }

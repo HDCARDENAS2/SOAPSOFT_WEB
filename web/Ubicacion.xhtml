@@ -23,33 +23,47 @@
                 </p:panel> 
 
 
-                <p:dataTable id="listaUbicacion" value="#{ubicacionBean.tb_o_ubicacion}"
+                <p:dataTable id="listaUbicacion" value="#{ubicacionBean.lista_ubicacion}"
                          var="tbubi" 
                          paginator="true" 
-                         rows="20" 
+                         rows="10" 
                          editable="true"
                          paginatorPosition="bottom"
+                        
                          >
-                    <p:column headerText="ID">
-                        <p:outputLabel value="#{tbubi.id}"></p:outputLabel>
-
+                    
+                    <p:ajax event="rowEdit" listener="#{ubicacionBean.onRowEdit}" update=":forma:msgs" />
+                     <p:ajax event="rowEditCancel" listener="#{ubicacionBean.onRowCancel}" update=":forma:msgs" />
+                    <p:column headerText="ID">  
+                        <h:outputText value="#{tbubi.id}" />
                 </p:column>
                     
                     <p:column headerText="Descripcion">
-                        <p:outputLabel value="#{tbubi.descripcion}"></p:outputLabel>
-
+                        <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{tbubi.descripcion}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{tbubi.descripcion}" style="width:100%" label="Descripcion"/></f:facet>
+                    </p:cellEditor>       
                 </p:column>
-                
-                </p:dataTable>
-
+                        
+          <p:column  style="width:32px">
+           <p:rowEditor />
+   
+          </p:column>
+                     
+         <p:column headerText="" style="width:30px" >
+             <p:commandButton
+                  update=":forma:msgs,:forma:listaUbicacion"
+                   ajax="true" icon="ui-icon-trash"
+                   action="#{ubicacionBean.deleteUbicacion(tbubi.id)}" />
+        </p:column>
+        
+        
+        </p:dataTable>
+    
                 <p:link outcome="index" value="Inicio">
-                    <f:param name="productId" value="10" />
-
-
-
+                  <f:param name="productId" value="10" />
 
                 </p:link>
-
 
             </h:form>
         </ui:define>
