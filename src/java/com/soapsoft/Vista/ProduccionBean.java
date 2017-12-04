@@ -134,11 +134,7 @@ public class ProduccionBean {
         return port.fnConsultarPr();
     }
 
-    private static String fnModificar(int id, java.lang.String descripcion, java.lang.String modificadoPor) {
-        com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
-        com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
-        return port.fnModificar(id, descripcion, modificadoPor);
-    }
+
 
    
     

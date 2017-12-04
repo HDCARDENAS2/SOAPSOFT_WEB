@@ -6,6 +6,7 @@
 package com.soapsoft.Vista;
 
 import com.soapsoft.Vista.Model.DetalleFacturaVenta;
+import com.soapsoft.service.Resultado;
 import com.soapsoft.service.TbClientes;
 import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
@@ -74,6 +75,9 @@ public class VentasBean {
                             detalle_temp.getVlorTotal(),
                             "hernan"
                             );
+                    
+                    modificarStockProdTerminado(   detalle_temp.getIdProductoTerminado() ,  detalle_temp.getCantidad());
+                    
               }
               
               
@@ -91,8 +95,23 @@ public class VentasBean {
       
   
     public void v_addicionar_detalle(){
-          o_deltalle_factura.add(detalle);
-          detalle  = new DetalleFacturaVenta();
+        
+        if(detalle.getIdProductoTerminado() != 0){
+            
+            System.err.println(" dee "+detalle.getIdProductoTerminado());
+            
+               Resultado  datos = validarStockProdTerminado(detalle.getIdProductoTerminado(),detalle.getCantidad());
+               
+               if(datos.getEstado().equals("false")){
+                      mensaje("Info",datos.getResultado());
+               }else{
+                   o_deltalle_factura.add(detalle);
+                   detalle  = new DetalleFacturaVenta();
+               }
+        }else{
+                    mensaje("Info","selecione un producto");
+        }
+       
     }
     
     
@@ -186,6 +205,29 @@ public class VentasBean {
         com.soapsoft.service.SRVDETALLEFACTURAVENTA port = service.getSRVDETALLEFACTURAVENTAPort();
         return port.fnInsertarDetalleFacturaVenta(idFacturaVenta, idProducto, cantidad, vlorIva, tipoIva, vlorUnitario, vlorTotal, creadoPor);
     }
+
+    private static Resultado validarStockProdTerminado(int id, int cantidad) {
+        com.soapsoft.service.SVRPRODUCTOTERMINADO_Service service = new com.soapsoft.service.SVRPRODUCTOTERMINADO_Service();
+        com.soapsoft.service.SVRPRODUCTOTERMINADO port = service.getSVRPRODUCTOTERMINADOPort();
+        return port.validarStockProdTerminado(id, cantidad);
+    }
+
+    private static String modificarStocksumarProdTerminado(int id, int cantidad) {
+        com.soapsoft.service.SVRPRODUCTOTERMINADO_Service service = new com.soapsoft.service.SVRPRODUCTOTERMINADO_Service();
+        com.soapsoft.service.SVRPRODUCTOTERMINADO port = service.getSVRPRODUCTOTERMINADOPort();
+        return port.modificarStocksumarProdTerminado(id, cantidad);
+    }
+
+    private static String modificarStockProdTerminado(int id, int cantidad) {
+        com.soapsoft.service.SVRPRODUCTOTERMINADO_Service service = new com.soapsoft.service.SVRPRODUCTOTERMINADO_Service();
+        com.soapsoft.service.SVRPRODUCTOTERMINADO port = service.getSVRPRODUCTOTERMINADOPort();
+        return port.modificarStockProdTerminado(id, cantidad);
+    }
+
+    
+    
+    
+    
     
         
 }

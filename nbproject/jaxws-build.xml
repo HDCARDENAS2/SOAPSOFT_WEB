@@ -106,5 +106,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/soapsoft/service"/>
         <delete dir="${build.generated.dir}/jax-wsCache/SVR_UBICACION"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-SVR_PRODUCTOTERMINADO, wsimport-client-SVR_CLIENTES, wsimport-client-SRV_DETALLEFACTURAVENTA, wsimport-client-SVR_FACTURAVENTA, wsimport-client-SVR_UBICACION"/>
+    <target name="wsimport-client-SVR_PRODUCCION" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCCION"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SVR_PRODUCCION" destdir="${build.generated.dir}/jax-wsCache/SVR_PRODUCCION" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_PRODUCCION/wsdl/localhost_8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/SVR_PRODUCCION/wsdl/localhost_8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCCION"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCCION">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SVR_PRODUCCION" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/soapsoft/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/SVR_PRODUCCION"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-SVR_PRODUCTOTERMINADO, wsimport-client-SVR_CLIENTES, wsimport-client-SRV_DETALLEFACTURAVENTA, wsimport-client-SVR_FACTURAVENTA, wsimport-client-SVR_UBICACION, wsimport-client-SVR_PRODUCCION"/>
 </project>

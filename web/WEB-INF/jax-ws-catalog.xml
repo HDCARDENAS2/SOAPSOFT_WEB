@@ -10,4 +10,6 @@
     <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO?xsd=1" uri="wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_PRODUCTOTERMINADO.xsd_1.xsd"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?wsdl" uri="wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION.wsdl"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?xsd=1" uri="wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION?wsdl" uri="wsdl/localhost_8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION.wsdl"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION?xsd=1" uri="wsdl/localhost_8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION.xsd_1.xsd"/>
 </catalog>

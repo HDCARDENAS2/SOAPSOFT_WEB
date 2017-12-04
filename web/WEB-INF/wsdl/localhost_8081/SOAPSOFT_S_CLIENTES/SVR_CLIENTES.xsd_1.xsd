@@ -4,6 +4,10 @@
 
 <xs:element name="consultar_clienteResponse" type="tns:consultar_clienteResponse"/>
 
+<xs:element name="consultar_todos_clientes" type="tns:consultar_todos_clientes"/>
+
+<xs:element name="consultar_todos_clientesResponse" type="tns:consultar_todos_clientesResponse"/>
+
 <xs:element name="fn_borrar" type="tns:fn_borrar"/>
 
 <xs:element name="fn_borrarResponse" type="tns:fn_borrarResponse"/>
@@ -42,8 +46,6 @@
 <xs:element name="razon_social" type="xs:string" minOccurs="0"/>
 <xs:element name="telefono" type="xs:string" minOccurs="0"/>
 <xs:element name="celular" type="xs:string" minOccurs="0"/>
-<xs:element name="contacto" type="xs:int"/>
-<xs:element name="estado" type="xs:boolean"/>
 <xs:element name="direccion" type="xs:string" minOccurs="0"/>
 <xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -82,6 +84,16 @@
 <xs:element name="razonSocial" type="xs:string" minOccurs="0"/>
 <xs:element name="tbFacturaVentas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="telefono" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultar_todos_clientes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultar_todos_clientesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tbClientes" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
