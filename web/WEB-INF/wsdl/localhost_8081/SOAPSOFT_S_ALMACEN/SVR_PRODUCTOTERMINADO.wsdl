@@ -16,11 +16,29 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
+<message name="fn_insertar_productoterminado">
+<part name="parameters" element="tns:fn_insertar_productoterminado"/>
+</message>
+<message name="fn_insertar_productoterminadoResponse">
+<part name="parameters" element="tns:fn_insertar_productoterminadoResponse"/>
+</message>
+<message name="fn_eliminar_productoterminado">
+<part name="parameters" element="tns:fn_eliminar_productoterminado"/>
+</message>
+<message name="fn_eliminar_productoterminadoResponse">
+<part name="parameters" element="tns:fn_eliminar_productoterminadoResponse"/>
+</message>
 <message name="fn_modificar_productoterminado">
 <part name="parameters" element="tns:fn_modificar_productoterminado"/>
 </message>
 <message name="fn_modificar_productoterminadoResponse">
 <part name="parameters" element="tns:fn_modificar_productoterminadoResponse"/>
+</message>
+<message name="consultar_productos">
+<part name="parameters" element="tns:consultar_productos"/>
+</message>
+<message name="consultar_productosResponse">
+<part name="parameters" element="tns:consultar_productosResponse"/>
 </message>
 <message name="validar_stock_prod_terminado">
 <part name="parameters" element="tns:validar_stock_prod_terminado"/>
@@ -34,24 +52,6 @@
 <message name="modificar_stock_prod_terminadoResponse">
 <part name="parameters" element="tns:modificar_stock_prod_terminadoResponse"/>
 </message>
-<message name="consultar_productos">
-<part name="parameters" element="tns:consultar_productos"/>
-</message>
-<message name="consultar_productosResponse">
-<part name="parameters" element="tns:consultar_productosResponse"/>
-</message>
-<message name="fn_insertar_productoterminado">
-<part name="parameters" element="tns:fn_insertar_productoterminado"/>
-</message>
-<message name="fn_insertar_productoterminadoResponse">
-<part name="parameters" element="tns:fn_insertar_productoterminadoResponse"/>
-</message>
-<message name="fn_eliminar_productoterminado">
-<part name="parameters" element="tns:fn_eliminar_productoterminado"/>
-</message>
-<message name="fn_eliminar_productoterminadoResponse">
-<part name="parameters" element="tns:fn_eliminar_productoterminadoResponse"/>
-</message>
 <portType name="SVR_PRODUCTOTERMINADO">
 <operation name="modificar_stocksumar_prod_terminado">
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stocksumar_prod_terminadoRequest" message="tns:modificar_stocksumar_prod_terminado"/>
@@ -61,9 +61,21 @@
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/helloResponse" message="tns:helloResponse"/>
 </operation>
+<operation name="fn_insertar_productoterminado">
+<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_insertar_productoterminadoRequest" message="tns:fn_insertar_productoterminado"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_insertar_productoterminadoResponse" message="tns:fn_insertar_productoterminadoResponse"/>
+</operation>
+<operation name="fn_eliminar_productoterminado">
+<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_eliminar_productoterminadoRequest" message="tns:fn_eliminar_productoterminado"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_eliminar_productoterminadoResponse" message="tns:fn_eliminar_productoterminadoResponse"/>
+</operation>
 <operation name="fn_modificar_productoterminado">
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_modificar_productoterminadoRequest" message="tns:fn_modificar_productoterminado"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_modificar_productoterminadoResponse" message="tns:fn_modificar_productoterminadoResponse"/>
+</operation>
+<operation name="consultar_productos">
+<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/consultar_productosRequest" message="tns:consultar_productos"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/consultar_productosResponse" message="tns:consultar_productosResponse"/>
 </operation>
 <operation name="validar_stock_prod_terminado">
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/validar_stock_prod_terminadoRequest" message="tns:validar_stock_prod_terminado"/>
@@ -72,18 +84,6 @@
 <operation name="modificar_stock_prod_terminado">
 <input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stock_prod_terminadoRequest" message="tns:modificar_stock_prod_terminado"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/modificar_stock_prod_terminadoResponse" message="tns:modificar_stock_prod_terminadoResponse"/>
-</operation>
-<operation name="consultar_productos">
-<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/consultar_productosRequest" message="tns:consultar_productos"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/consultar_productosResponse" message="tns:consultar_productosResponse"/>
-</operation>
-<operation name="fn_insertar_productoterminado">
-<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_insertar_productoterminadoRequest" message="tns:fn_insertar_productoterminado"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_insertar_productoterminadoResponse" message="tns:fn_insertar_productoterminadoResponse"/>
-</operation>
-<operation name="fn_eliminar_productoterminado">
-<input wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_eliminar_productoterminadoRequest" message="tns:fn_eliminar_productoterminado"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_PRODUCTOTERMINADO/fn_eliminar_productoterminadoResponse" message="tns:fn_eliminar_productoterminadoResponse"/>
 </operation>
 </portType>
 <binding name="SVR_PRODUCTOTERMINADOPortBinding" type="tns:SVR_PRODUCTOTERMINADO">
@@ -106,7 +106,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="fn_insertar_productoterminado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fn_eliminar_productoterminado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="fn_modificar_productoterminado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="consultar_productos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -125,33 +152,6 @@
 </output>
 </operation>
 <operation name="modificar_stock_prod_terminado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="consultar_productos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fn_insertar_productoterminado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fn_eliminar_productoterminado">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

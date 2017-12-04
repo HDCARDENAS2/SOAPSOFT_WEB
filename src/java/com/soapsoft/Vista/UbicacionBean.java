@@ -106,7 +106,7 @@ public class UbicacionBean {
    public void crear_ubicacion()
    {
 
-       fnInsertar(v_descripcion, creadoPor);
+       fnInsertarUbicacion(v_descripcion, creadoPor);
        mensaje("Info","Ubicación Insertada con exito!");
        lista_ubicacion=new ArrayList<>();
        lista_ubicacion = consultarTodosUbicacion();
@@ -122,7 +122,7 @@ public class UbicacionBean {
        setId(((TbUbicacion) event.getObject()).getId());
        setV_descripcion(((TbUbicacion) event.getObject()).getDescripcion());
     
-        fnModificar(id,v_descripcion,modificadoPor);
+        fnModificarUbicacion(id,v_descripcion,modificadoPor);
        
          lista_ubicacion=new ArrayList<>();
          lista_ubicacion = consultarTodosUbicacion();
@@ -137,7 +137,7 @@ public class UbicacionBean {
        {
        for (TbUbicacion tbUbicacion : lista_ubicacion) {
             if(tbUbicacion.getId()== id){
-                fnEliminar(id);
+                fnEliminarUbicacion(id);
             
                break;
             }
@@ -157,10 +157,24 @@ public class UbicacionBean {
               FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(titulo, mensaje));
     }
 
-    private static String fnInsertar(java.lang.String descripcion, java.lang.String creadoPor) {
+    private static String fnInsertarUbicacion(java.lang.String descripcion, java.lang.String creadoPor) {
         com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
         com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
-        return port.fnInsertar(descripcion, creadoPor);
+        return port.fnInsertarUbicacion(descripcion, creadoPor);
+    }
+    
+    
+
+    private static String fnModificarUbicacion(int id, java.lang.String descripcion, java.lang.String modificadoPor) {
+        com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
+        com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
+        return port.fnModificarUbicacion(id, descripcion, modificadoPor);
+    }
+
+    private static String fnEliminarUbicacion(int id) {
+        com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
+        com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
+        return port.fnEliminarUbicacion(id);
     }
 
     private static java.util.List<com.soapsoft.service.TbUbicacion> consultarTodosUbicacion() {
@@ -169,16 +183,7 @@ public class UbicacionBean {
         return port.consultarTodosUbicacion();
     }
 
-    private static String fnModificar(int id, java.lang.String descripcion, java.lang.String modificadoPor) {
-        com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
-        com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
-        return port.fnModificar(id, descripcion, modificadoPor);
-    }
+    
 
-    private static String fnEliminar(int id) {
-        com.soapsoft.service.SVRUBICACION_Service service = new com.soapsoft.service.SVRUBICACION_Service();
-        com.soapsoft.service.SVRUBICACION port = service.getSVRUBICACIONPort();
-        return port.fnEliminar(id);
-    }
-
+   
 }

@@ -4,97 +4,78 @@
 <xsd:import namespace="http://Service.soapsoft.com/" schemaLocation="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="fn_modificar">
-<part name="parameters" element="tns:fn_modificar"/>
-</message>
-<message name="fn_modificarResponse">
-<part name="parameters" element="tns:fn_modificarResponse"/>
-</message>
-<message name="fn_insertar">
-<part name="parameters" element="tns:fn_insertar"/>
-</message>
-<message name="fn_insertarResponse">
-<part name="parameters" element="tns:fn_insertarResponse"/>
-</message>
-<message name="fn_eliminar">
-<part name="parameters" element="tns:fn_eliminar"/>
-</message>
-<message name="fn_eliminarResponse">
-<part name="parameters" element="tns:fn_eliminarResponse"/>
-</message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
-</message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
-</message>
 <message name="consultar_todos_ubicacion">
 <part name="parameters" element="tns:consultar_todos_ubicacion"/>
 </message>
 <message name="consultar_todos_ubicacionResponse">
 <part name="parameters" element="tns:consultar_todos_ubicacionResponse"/>
 </message>
+<message name="fn_insertar_ubicacion">
+<part name="parameters" element="tns:fn_insertar_ubicacion"/>
+</message>
+<message name="fn_insertar_ubicacionResponse">
+<part name="parameters" element="tns:fn_insertar_ubicacionResponse"/>
+</message>
+<message name="fn_eliminar_ubicacion">
+<part name="parameters" element="tns:fn_eliminar_ubicacion"/>
+</message>
+<message name="fn_eliminar_ubicacionResponse">
+<part name="parameters" element="tns:fn_eliminar_ubicacionResponse"/>
+</message>
+<message name="fn_modificar_ubicacion">
+<part name="parameters" element="tns:fn_modificar_ubicacion"/>
+</message>
+<message name="fn_modificar_ubicacionResponse">
+<part name="parameters" element="tns:fn_modificar_ubicacionResponse"/>
+</message>
 <portType name="SVR_UBICACION">
-<operation name="fn_modificar">
-<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_modificarRequest" message="tns:fn_modificar"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_modificarResponse" message="tns:fn_modificarResponse"/>
-</operation>
-<operation name="fn_insertar">
-<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_insertarRequest" message="tns:fn_insertar"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_insertarResponse" message="tns:fn_insertarResponse"/>
-</operation>
-<operation name="fn_eliminar">
-<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_eliminarRequest" message="tns:fn_eliminar"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_eliminarResponse" message="tns:fn_eliminarResponse"/>
-</operation>
-<operation name="hello">
-<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/helloResponse" message="tns:helloResponse"/>
-</operation>
 <operation name="consultar_todos_ubicacion">
 <input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/consultar_todos_ubicacionRequest" message="tns:consultar_todos_ubicacion"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/consultar_todos_ubicacionResponse" message="tns:consultar_todos_ubicacionResponse"/>
 </operation>
+<operation name="fn_insertar_ubicacion">
+<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_insertar_ubicacionRequest" message="tns:fn_insertar_ubicacion"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_insertar_ubicacionResponse" message="tns:fn_insertar_ubicacionResponse"/>
+</operation>
+<operation name="fn_eliminar_ubicacion">
+<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_eliminar_ubicacionRequest" message="tns:fn_eliminar_ubicacion"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_eliminar_ubicacionResponse" message="tns:fn_eliminar_ubicacionResponse"/>
+</operation>
+<operation name="fn_modificar_ubicacion">
+<input wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_modificar_ubicacionRequest" message="tns:fn_modificar_ubicacion"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_UBICACION/fn_modificar_ubicacionResponse" message="tns:fn_modificar_ubicacionResponse"/>
+</operation>
 </portType>
 <binding name="SVR_UBICACIONPortBinding" type="tns:SVR_UBICACION">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="fn_modificar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fn_insertar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fn_eliminar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="consultar_todos_ubicacion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fn_insertar_ubicacion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fn_eliminar_ubicacion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fn_modificar_ubicacion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

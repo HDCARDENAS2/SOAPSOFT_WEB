@@ -4,21 +4,17 @@
 
 <xs:element name="consultar_todos_ubicacionResponse" type="tns:consultar_todos_ubicacionResponse"/>
 
-<xs:element name="fn_eliminar" type="tns:fn_eliminar"/>
+<xs:element name="fn_eliminar_ubicacion" type="tns:fn_eliminar_ubicacion"/>
 
-<xs:element name="fn_eliminarResponse" type="tns:fn_eliminarResponse"/>
+<xs:element name="fn_eliminar_ubicacionResponse" type="tns:fn_eliminar_ubicacionResponse"/>
 
-<xs:element name="fn_insertar" type="tns:fn_insertar"/>
+<xs:element name="fn_insertar_ubicacion" type="tns:fn_insertar_ubicacion"/>
 
-<xs:element name="fn_insertarResponse" type="tns:fn_insertarResponse"/>
+<xs:element name="fn_insertar_ubicacionResponse" type="tns:fn_insertar_ubicacionResponse"/>
 
-<xs:element name="fn_modificar" type="tns:fn_modificar"/>
+<xs:element name="fn_modificar_ubicacion" type="tns:fn_modificar_ubicacion"/>
 
-<xs:element name="fn_modificarResponse" type="tns:fn_modificarResponse"/>
-
-<xs:element name="hello" type="tns:hello"/>
-
-<xs:element name="helloResponse" type="tns:helloResponse"/>
+<xs:element name="fn_modificar_ubicacionResponse" type="tns:fn_modificar_ubicacionResponse"/>
 
 <xs:complexType name="consultar_todos_ubicacion">
 <xs:sequence/>
@@ -43,32 +39,32 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="hello">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="helloResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="fn_insertar">
+<xs:complexType name="fn_insertar_ubicacion">
 <xs:sequence>
 <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
 <xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="fn_insertarResponse">
+<xs:complexType name="fn_insertar_ubicacionResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="fn_modificar">
+<xs:complexType name="fn_eliminar_ubicacion">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_eliminar_ubicacionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_modificar_ubicacion">
 <xs:sequence>
 <xs:element name="ID" type="xs:int"/>
 <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
@@ -76,19 +72,7 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="fn_modificarResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="fn_eliminar">
-<xs:sequence>
-<xs:element name="ID" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="fn_eliminarResponse">
+<xs:complexType name="fn_modificar_ubicacionResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
