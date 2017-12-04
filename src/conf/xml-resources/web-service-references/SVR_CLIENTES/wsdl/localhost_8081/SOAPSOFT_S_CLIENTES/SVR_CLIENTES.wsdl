@@ -4,6 +4,12 @@
 <xsd:import namespace="http://Service.soapsoft.com/" schemaLocation="http://localhost:8081/SOAPSOFT_S_CLIENTES/SVR_CLIENTES?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="consultar_cliente">
+<part name="parameters" element="tns:consultar_cliente"/>
+</message>
+<message name="consultar_clienteResponse">
+<part name="parameters" element="tns:consultar_clienteResponse"/>
+</message>
 <message name="fn_borrar">
 <part name="parameters" element="tns:fn_borrar"/>
 </message>
@@ -22,13 +28,11 @@
 <message name="fn_insertarResponse">
 <part name="parameters" element="tns:fn_insertarResponse"/>
 </message>
-<message name="consultar_cliente">
-<part name="parameters" element="tns:consultar_cliente"/>
-</message>
-<message name="consultar_clienteResponse">
-<part name="parameters" element="tns:consultar_clienteResponse"/>
-</message>
 <portType name="SVR_CLIENTES">
+<operation name="consultar_cliente">
+<input wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/consultar_clienteRequest" message="tns:consultar_cliente"/>
+<output wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/consultar_clienteResponse" message="tns:consultar_clienteResponse"/>
+</operation>
 <operation name="fn_borrar">
 <input wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/fn_borrarRequest" message="tns:fn_borrar"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/fn_borrarResponse" message="tns:fn_borrarResponse"/>
@@ -41,13 +45,18 @@
 <input wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/fn_insertarRequest" message="tns:fn_insertar"/>
 <output wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/fn_insertarResponse" message="tns:fn_insertarResponse"/>
 </operation>
-<operation name="consultar_cliente">
-<input wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/consultar_clienteRequest" message="tns:consultar_cliente"/>
-<output wsam:Action="http://Service.soapsoft.com/SVR_CLIENTES/consultar_clienteResponse" message="tns:consultar_clienteResponse"/>
-</operation>
 </portType>
 <binding name="SVR_CLIENTESPortBinding" type="tns:SVR_CLIENTES">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="consultar_cliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="fn_borrar">
 <soap:operation soapAction=""/>
 <input>
@@ -67,15 +76,6 @@
 </output>
 </operation>
 <operation name="fn_insertar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="consultar_cliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
