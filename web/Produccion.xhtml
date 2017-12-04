@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="plantilla.xhtml">
+
+        <ui:define name="content">
+
+            <h:form id="forma">
+                <p:growl id="msgs" showDetail="true" />
+                <p:panel id="panel" header="Produccion"> 
+                    <h:panelGrid columns="2" cellpadding="5">
+                        
+                        <h:outputLabel for="name" value="ID: *" style="font-weight:bold" />
+                        <p:inputText id="id" value="#{produccionBean.id_dpto_produccion}" required="true"/>
+
+                        <h:outputLabel for="name2" value="Creado por *" style="font-weight:bold" />
+                        <p:inputText id="cp" value="#{produccionBean.creadoPor}" required="true"/>
+                        
+                        <h:outputLabel for="name1" value="Descripción: *" style="font-weight:bold" />
+                        <p:inputText id="des" value="#{produccionBean.v_descripcion}" required="true"/>
+                        
+                        <p:commandButton value ="Guardar" action="#{produccionBean.crear_produccion()}" icon="ui-icon-disk" update=":forma:msgs,:forma:des,:forma:listaProduccion" ajax="true"> </p:commandButton>
+                    </h:panelGrid>
+                    
+                </p:panel> 
+
+
+                <p:dataTable id="listaProduccion" value="#{produccionBean.tb_o_produccion}"
+                         var="tbubi" 
+                         paginator="true" 
+                         rows="20" 
+                         editable="true"
+                         paginatorPosition="bottom"
+                         >
+                    <p:column headerText="ID">
+                        <p:outputLabel value="#{tbubi.idDptoProduccion}"></p:outputLabel>
+
+                </p:column>
+                                    
+                    
+                    <p:column headerText="Descripcion">
+                        <p:outputLabel value="#{tbubi.observacion}"></p:outputLabel>
+
+                </p:column>
+                
+                </p:dataTable>
+
+                <p:link outcome="index" value="Inicio">
+                    <f:param name="productId" value="10" />
+
+
+
+
+                </p:link>
+
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>  
