@@ -12,4 +12,6 @@
     <system systemId="http://localhost:8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION?xsd=1" uri="wsdl/localhost_8081/SOAPSOFT_S_ALMACEN/SVR_UBICACION.xsd_1.xsd"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION?wsdl" uri="wsdl/localhost_8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION.wsdl"/>
     <system systemId="http://localhost:8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION?xsd=1" uri="wsdl/localhost_8081/SOAPSOFT_S_PRODUCCION/SVR_PRODUCCION.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_PROVEEDORES/SVR_PROVEEDORES?wsdl" uri="wsdl/localhost_8081/SOAPSOFT_S_PROVEEDORES/SVR_PROVEEDORES.wsdl"/>
+    <system systemId="http://localhost:8081/SOAPSOFT_S_PROVEEDORES/SVR_PROVEEDORES?xsd=1" uri="wsdl/localhost_8081/SOAPSOFT_S_PROVEEDORES/SVR_PROVEEDORES.xsd_1.xsd"/>
 </catalog>

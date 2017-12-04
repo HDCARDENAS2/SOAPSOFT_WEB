@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:tns="http://services.soapsoft.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.soapsoft.com/">
+
+<xs:element name="fn_borrar_prove" type="tns:fn_borrar_prove"/>
+
+<xs:element name="fn_borrar_proveResponse" type="tns:fn_borrar_proveResponse"/>
+
+<xs:element name="fn_buscar_all_prove" type="tns:fn_buscar_all_prove"/>
+
+<xs:element name="fn_buscar_all_proveResponse" type="tns:fn_buscar_all_proveResponse"/>
+
+<xs:element name="fn_insertar_prove" type="tns:fn_insertar_prove"/>
+
+<xs:element name="fn_insertar_proveResponse" type="tns:fn_insertar_proveResponse"/>
+
+<xs:element name="fn_modificar_prove" type="tns:fn_modificar_prove"/>
+
+<xs:element name="fn_modificar_proveResponse" type="tns:fn_modificar_proveResponse"/>
+
+<xs:complexType name="fn_modificar_prove">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="razon_social" type="xs:string" minOccurs="0"/>
+<xs:element name="contacto" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_modificar_proveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_buscar_all_prove">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="fn_buscar_all_proveResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tbProveedor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tbProveedor">
+<xs:sequence>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="contacto" type="xs:string" minOccurs="0"/>
+<xs:element name="creadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:boolean"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="modificadoEn" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="razonSocial" type="xs:string" minOccurs="0"/>
+<xs:element name="tbOrdenCompras" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_insertar_prove">
+<xs:sequence>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="razon_social" type="xs:string" minOccurs="0"/>
+<xs:element name="contacto" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:boolean"/>
+<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_insertar_proveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_borrar_prove">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_borrar_proveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="plantilla.xhtml">
+
+        <ui:define name="content">
+
+            <h:form id="forma">
+                <p:growl id="msgs" showDetail="true" />
+                <p:panel id="panel" header="Proveedores"> 
+                    <h:panelGrid columns="4" cellpadding="5">
+                        <h:outputLabel for="nit" value="Nit: *" style="font-weight:bold" />
+                        <p:inputText id="nit" value="#{proveedorBean.v_nit}" required="true"/>
+                        
+                        <h:outputLabel for="social" value="Razón Social: *" style="font-weight:bold" />
+                        <p:inputText id="social" value="#{proveedorBean.v_razon_social}" required="true"/>
+            
+                         <p:outputLabel for="con" value="Contacto:" />
+                         <p:inputText id="con" value="#{proveedorBean.contacto}" required="true"/>
+ 
+                          <p:outputLabel for="tel" value="Celular:" />
+                          <p:inputText id="tel" value="#{proveedorBean.v_tel}" required="true"/>
+                          
+                         
+                          <p:outputLabel for="cel" value="Celular:" />
+                          <p:inputText id="cel" value="#{proveedorBean.v_cel}" required="true"/>
+                          
+                           <h:outputLabel for="direccion" value="Dirección: *"  />
+                           <p:inputText id="dir" value="#{proveedorBean.v_direccion}" required="true"/>
+                       
+                         
+                           <p:commandButton  value ="Guardar" action="#{proveedorBean.crear_proveedor()}" icon="ui-icon-disk" update=":forma:msgs,:forma:nit,:forma:social,:forma:tel,:forma:cel,:forma:dir,:forma:contacto,:forma:listacliente" ajax="true"> </p:commandButton>
+                    </h:panelGrid>
+                </p:panel> 
+
+
+                <p:dataTable id="listacliente" value="#{proveedorBean.lista_proveedor}"
+                         var="tbcli" 
+                         paginator="true" 
+                         rows="10" 
+                         editable="true"
+                         paginatorPosition="bottom"
+                        
+                         >
+                    
+                    <p:ajax event="rowEdit" listener="#{proveedorBean.onRowEdit}" update=":forma:msgs" />
+                    <p:ajax event="rowEditCancel" listener="#{proveedorBean.onRowCancel}" update=":forma:msgs" />
+                    <p:column headerText="ID">  
+                        <h:outputText value="#{tbcli.id}" />
+                </p:column>
+                    
+                    <p:column headerText="Nit">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{tbcli.nit}" /></f:facet>
+                            <f:facet name="input"><p:inputText value="#{tbcli.nit}" style="width:100%" label="Nit"/></f:facet>
+                    </p:cellEditor>       
+                </p:column>
+                     
+                         <p:column headerText="Razón Social">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{tbcli.razonSocial}" /></f:facet>
+                            <f:facet name="input"><p:inputText value="#{tbcli.razonSocial}" style="width:100%" label="RazonSocial"/></f:facet>
+                    </p:cellEditor>       
+                </p:column>
+                    
+                    <p:column headerText="Contacto">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{tbcli.contacto}" /></f:facet>
+                            <f:facet name="input"><p:inputText value="#{tbcli.contacto}" style="width:100%" label="telefono"/></f:facet>
+                    </p:cellEditor>       
+                </p:column>
+                    
+                     
+               <p:column headerText="Teléfono">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{tbcli.telefono}" /></f:facet>
+                            <f:facet name="input"><p:inputText value="#{tbcli.telefono}" style="width:100%" label="telefono"/></f:facet>
+                    </p:cellEditor>       
+                </p:column>
+                     
+               <p:column headerText="Celular">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{tbcli.celular}" /></f:facet>
+                            <f:facet name="input"><p:inputText value="#{tbcli.celular}" style="width:100%" label="celular"/></f:facet>
+                    </p:cellEditor>       
+                </p:column>
+                  <p:column headerText="Dirección">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{tbcli.direccion}" /></f:facet>
+                            <f:facet name="input"><p:inputText value="#{tbcli.direccion}" style="width:100%" label="direccion"/></f:facet>
+                    </p:cellEditor>       
+                </p:column>
+                     
+                     
+                        
+          <p:column  style="width:32px">
+           <p:rowEditor />
+   
+          </p:column>
+                     
+         <p:column headerText="" style="width:30px" >
+             <p:commandButton
+                  update=":forma:msgs,:forma:listacliente"
+                   ajax="true" icon="ui-icon-trash"
+                   action="#{proveedorBean.deleteproveedor(tbcli.id)}" />
+        </p:column>
+        
+        
+        </p:dataTable>
+    
+                <p:link outcome="index" value="Inicio">
+                  <f:param name="productId" value="10" />
+                </p:link>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>  
