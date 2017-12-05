@@ -16,6 +16,19 @@
 
 <xs:element name="fn_modificar_ubicacionResponse" type="tns:fn_modificar_ubicacionResponse"/>
 
+<xs:complexType name="fn_insertar_ubicacion">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fn_insertar_ubicacionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="consultar_todos_ubicacion">
 <xs:sequence/>
 </xs:complexType>
@@ -36,19 +49,6 @@
 <xs:element name="modificadoPor" type="xs:string" minOccurs="0"/>
 <xs:element name="tbMateriaPrimas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="tbProductoTerminados" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="fn_insertar_ubicacion">
-<xs:sequence>
-<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
-<xs:element name="creadoPor" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="fn_insertar_ubicacionResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

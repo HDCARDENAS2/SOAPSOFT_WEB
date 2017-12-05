@@ -16,17 +16,17 @@
 <message name="fn_insertar_proveResponse">
 <part name="parameters" element="tns:fn_insertar_proveResponse"/>
 </message>
-<message name="fn_modificar_prove">
-<part name="parameters" element="tns:fn_modificar_prove"/>
-</message>
-<message name="fn_modificar_proveResponse">
-<part name="parameters" element="tns:fn_modificar_proveResponse"/>
-</message>
 <message name="fn_buscar_all_prove">
 <part name="parameters" element="tns:fn_buscar_all_prove"/>
 </message>
 <message name="fn_buscar_all_proveResponse">
 <part name="parameters" element="tns:fn_buscar_all_proveResponse"/>
+</message>
+<message name="fn_modificar_prove">
+<part name="parameters" element="tns:fn_modificar_prove"/>
+</message>
+<message name="fn_modificar_proveResponse">
+<part name="parameters" element="tns:fn_modificar_proveResponse"/>
 </message>
 <portType name="SVR_PROVEEDORES">
 <operation name="fn_borrar_prove">
@@ -37,13 +37,13 @@
 <input wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_insertar_proveRequest" message="tns:fn_insertar_prove"/>
 <output wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_insertar_proveResponse" message="tns:fn_insertar_proveResponse"/>
 </operation>
-<operation name="fn_modificar_prove">
-<input wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_modificar_proveRequest" message="tns:fn_modificar_prove"/>
-<output wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_modificar_proveResponse" message="tns:fn_modificar_proveResponse"/>
-</operation>
 <operation name="fn_buscar_all_prove">
 <input wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_buscar_all_proveRequest" message="tns:fn_buscar_all_prove"/>
 <output wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_buscar_all_proveResponse" message="tns:fn_buscar_all_proveResponse"/>
+</operation>
+<operation name="fn_modificar_prove">
+<input wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_modificar_proveRequest" message="tns:fn_modificar_prove"/>
+<output wsam:Action="http://services.soapsoft.com/SVR_PROVEEDORES/fn_modificar_proveResponse" message="tns:fn_modificar_proveResponse"/>
 </operation>
 </portType>
 <binding name="SVR_PROVEEDORESPortBinding" type="tns:SVR_PROVEEDORES">
@@ -66,7 +66,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="fn_modificar_prove">
+<operation name="fn_buscar_all_prove">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +75,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="fn_buscar_all_prove">
+<operation name="fn_modificar_prove">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

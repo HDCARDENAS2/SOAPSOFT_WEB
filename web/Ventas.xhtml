@@ -1,19 +1,16 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-    <f:view contentType="text/html">
-        <h:head>
-            <f:facet name="first">
-                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Ventas</title>
-            </f:facet>
-        </h:head>
+    <ui:composition template="plantilla.xhtml">
 
-        <h:body>
+        <ui:define name="content">
+            
             <h:form id="forma">
                <p:growl id="msgs" showDetail="true" />
  
@@ -58,13 +55,16 @@
                         
                         <p:outputLabel value="Valor iva : " for="valoriva" />
                         <p:inputText id="valoriva" value="#{ventasBean.detalle.vlorIva}" />
-                        
+   
                         
                          <p:outputLabel value="Tipo Iva : " for="tipoiva" />
                          <p:inputText id="tipoiva" value="#{ventasBean.detalle.tipoIva}" />
   
                          <p:outputLabel value="Valor unitario : " for="varlorunitario" />
                          <p:inputText id="varlorunitario" value="#{ventasBean.detalle.vlorUnitario}" />
+                         
+                         
+                         
                          
                          <p:outputLabel value="Valor Total : " for="varlortotal" />
                          <p:inputText id="varlortotal" value="#{ventasBean.detalle.vlorTotal}" />
@@ -127,12 +127,7 @@
                
             </h:form>
             
-            
+    </ui:define>
+    </ui:composition>
 
-    
-            
-        </h:body>
-
-    </f:view>
-</html>
-
+</html>  
